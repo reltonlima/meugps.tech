@@ -15,10 +15,9 @@ const server = http.createServer((req, res) => {
       status: "online",
       // Altere esta linha no seu código local:
       message: "📍 O Servidor MeuGPS.tech operando com Deploy Automático! v1.1",
-      owner: "Relton Lima",
       stack: "Node.js + Nginx + GCP",
       db: "Supabase Connected",
-      developer: "Relton Lima",
+      developer: "Relton Lima"
     }));
   }
 
