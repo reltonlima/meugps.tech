@@ -1,0 +1,27 @@
+name: Deploy MeuGPS Tech
+
+on:
+  push:
+    branches:
+      - main  # Certifique-se de que sua branch principal se chama 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Executar comandos na VM via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /var/www/portfolio
+            git pull origin main
+            npm install --production
+            pm2 restart meugps-app || pm2 start src/server.js --name "meugps-app"
+            pm2 save
