@@ -4,9 +4,9 @@ const PORT = 3000;
 
 const server = http.createServer((req, res) => {
   // Configuração de CORS (Essencial para suas chamadas Axios de outros sites)
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+res.setHeader('Access-Control-Allow-Origin', 'https://meugps.tech'); // Mais seguro que '*'
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   // Rota Principal
   if (req.url === '/' || req.url === '/status') {

@@ -20,8 +20,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            # No seu arquivo .github/workflows/main.yml
             cd /var/www/portfolio
             git pull origin main
             npm install --production
+            # Garante que o PM2 olhe para dentro da pasta src
             pm2 restart meugps-app || pm2 start src/server.js --name "meugps-app"
             pm2 save
