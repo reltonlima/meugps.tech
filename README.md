@@ -71,37 +71,6 @@ Idéias para contribuição:
 
 📄 Licença---
 
-### O que você deve fazer agora:
-1.  Crie um arquivo chamado **`README.md`** na raiz do seu projeto local.
-2.  Cole o conteúdo acima.
-3.  Faça o commit e push:
-    ```bash
-    git add README.md
-    git commit -m "docs: adiciona readme completo com instruções de setup"
-    git push origin main
-    ```
-
-Dessa forma, quem acessar seu GitHub já verá a página principal do repositório toda organizada e profissional.
-
-**Deseja que eu gere o arquivo de licença `LICENSE` agora para que o projeto seja oficialmente Open Source com permissões claras?**
 Distribuído sob a licença MIT. Veja LICENSE para mais informações.
 
 Desenvolvido por Relton Lima 🚀
-
-```bash
----
-
-### O que você deve fazer agora:
-1.  Crie um arquivo chamado **`README.md`** na raiz do seu projeto local.
-2.  Cole o conteúdo acima.
-3.  Faça o commit e push:
-    ```bash
-    git add README.md
-    git commit -m "docs: adiciona readme completo com instruções de setup"
-    git push origin main
-    ```
-
-Dessa forma, quem acessar seu GitHub já verá a página principal do repositório toda organizada e profissional.
-
-**Deseja que eu gere o arquivo de licença `LICENSE` agora para que o projeto seja oficialmente Open Source com permissões claras?**
-```
