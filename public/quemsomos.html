@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos | MeuGPS Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: #e5e5e5; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-gradient {
+            border: 1px solid;
+            border-image-source: linear-gradient(90deg, #3b82f6, #22c55e);
+            border-image-slice: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="p-6 border-b border-gray-800 bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter">MEUGPS <span class="gradient-text">LABS</span></h1>
+            <div class="space-x-6 text-sm uppercase tracking-widest font-semibold">
+                <a href="#missao" class="hover:text-blue-400 transition">Missão</a>
+                <a href="#tecnologias" class="hover:text-blue-400 transition">Tecnologias</a>
+                <a href="#valores" class="hover:text-blue-400 transition">Valores</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-24 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-6">A Elite da <span class="gradient-text">Telemetria AIoT</span></h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Somos uma SoftHouse de alta performance dedicada a redefinir a segurança veicular e naval através da soberania tecnológica e hardware aberto.
+            </p>
+        </div>
+    </section>
+
+    <section id="missao" class="py-20 bg-zinc-900/50">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 italic border-l-4 border-blue-500 pl-4">Para que viemos</h3>
+                <p class="text-lg text-gray-300 mb-4">
+                    Nascemos para romper o monopólio das "caixas pretas" proprietárias. Acreditamos que o controle sobre a segurança de um patrimônio não deve ser um segredo comercial, mas uma engenharia transparente e inviolável.
+                </p>
+                <p class="text-lg text-gray-300">
+                    Nosso foco principal é o desenvolvimento do **mais avançado sistema de rastreamento e bloqueio antifurto**, unindo a versatilidade do hardware à inteligência da nuvem.
+                </p>
+            </div>
+            <div class="p-8 bg-black border-gradient">
+                <blockquote class="text-2xl italic font-light text-blue-300">
+                    "Transformamos hardware acessível em proteção absoluta, entregando telemetria em tempo real com precisão militar."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-16 uppercase tracking-widest">Nossa Stack de Especialidade</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="p-8 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition border border-gray-800">
+                    <div class="text-blue-500 mb-4 text-4xl">🔌</div>
+                    <h4 class="text-xl font-bold mb-2">Open Hardware & AIoT</h4>
+                    <p class="text-gray-400 text-sm">Especialistas em ESP32 e Arduino. Criamos firmware de borda capaz de processamento inteligente e telemetria de baixa latência.</p>
+                </div>
+                <div class="p-8 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition border border-gray-800">
+                    <div class="text-green-500 mb-4 text-4xl">🐧</div>
+                    <h4 class="text-xl font-bold mb-2">Linux & Cloud Infra</h4>
+                    <p class="text-gray-400 text-sm">Operamos sobre bases Linux sólidas e clusters em Cloud (Azure/DO), garantindo escalabilidade e uptime de 99.9% para rastreamento crítico.</p>
+                </div>
+                <div class="p-8 bg-zinc-900 rounded-2xl hover:bg-zinc-800 transition border border-gray-800">
+                    <div class="text-red-500 mb-4 text-4xl">🛡️</div>
+                    <h4 class="text-xl font-bold mb-2">Segurança da Informação</h4>
+                    <p class="text-gray-400 text-sm">Blindagem de ponta a ponta. Do isolamento do hardware à criptografia de dados em trânsito. O bloqueio é soberano e impenetrável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+            &copy; 2026 MeuGPS Labs - Unidade de Telemetria Avançada. <br>
+            <span class="text-xs">Soberania Tecnológica aplicada à Proteção.</span>
+        </p>
+    </footer>
+
+</body>
+</html>
