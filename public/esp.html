@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuGPS Labs - Dashboard IoT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <style>
+        body {
+            background-color: #050505;
+        }
+
+        .neon-border {
+            border: 1px solid #1e3a8a;
+            box-shadow: 0 0 15px #1e3a8a;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen font-sans text-gray-100">
+
+    <div class="p-8 rounded-2xl bg-gray-900 neon-border w-80 text-center">
+        <header class="mb-8">
+            <h1 class="text-xs uppercase tracking-[0.3em] text-blue-500 font-bold">MeuGPS Labs</h1>
+            <h2 class="text-2xl font-black mt-2">CONTROLE <span class="text-white">AIoT</span></h2>
+        </header>
+
+        <label class="relative inline-flex items-center cursor-pointer mb-6">
+            <input type="checkbox" id="ledSwitch" class="sr-only peer" onchange="toggleLED(this)">
+            <div
+                class="w-20 h-10 bg-gray-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-8 after:w-9 after:transition-all">
+            </div>
+        </label>
+
+        <div id="statusBox" class="bg-black/50 p-3 rounded-lg border border-gray-800">
+            <p id="statusLabel" class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Desconectado</p>
+            <p id="ipLabel" class="text-[9px] text-gray-600 mt-1">Broker: 35.202.46.113</p>
+        </div>
+    </div>
+
+    <script>
+        // Configurações do Broker
+        const brokerIP = "35.202.46.113";
+        const brokerPort = 9001;
+        const topic = "meugps/v1/hardware/led";
+
+        const client = new Paho.MQTT.Client(brokerIP, brokerPort, "web_client_" + Math.random().toString(16).substr(2, 8));
+
+        client.onConnectionLost = (responseObject) => {
+            document.getElementById('statusLabel').innerText = "Conexão Perdida";
+            document.getElementById('statusLabel').classList.replace('text-blue-500', 'text-red-500');
+            setTimeout(connect, 3000); // Tenta reconectar
+        };
+
+        function connect() {
+            client.connect({
+                onSuccess: () => {
+                    document.getElementById('statusLabel').innerText = "Online - Cluster GCP";
+                    document.getElementById('statusLabel').className = "text-[10px] text-blue-500 uppercase font-bold tracking-widest";
+                }
+            });
+        }
+
+        function toggleLED(checkbox) {
+            const val = checkbox.checked ? "1" : "0";
+            const message = new Paho.MQTT.Message(val);
+            message.destinationName = topic;
+            client.send(message);
+        }
+
+        connect();
+    </script>
+</body>
+
+</html>
