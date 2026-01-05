@@ -1,0 +1,27 @@
+{
+  "name": "meugps.tech",
+  "version": "1.0.0",
+  "description": "![Status do Deploy](https://img.shields.io/github/actions/workflow/status/reltonlima/meugps.tech/main.yml?branch=main&style=flat-square)\r ![Licença](https://img.shields.io/github/license/reltonlima/meugps.tech?style=flat-square)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meugps-labs/meugps.tech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/meugps-labs/meugps.tech/issues"
+  },
+  "homepage": "https://github.com/meugps-labs/meugps.tech#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "mqtt": "^5.14.1",
+    "socket.io": "^4.8.3"
+  }
+}

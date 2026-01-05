@@ -51,7 +51,7 @@
         client.onConnectionLost = (responseObject) => {
             document.getElementById('statusLabel').innerText = "Conexão Perdida";
             document.getElementById('statusLabel').classList.replace('text-blue-500', 'text-red-500');
-            setTimeout(connect, 3000); // Tenta reconectar
+            setTimeout(connect, 3001); // Tenta reconectar
         };
 
         function connect() {
